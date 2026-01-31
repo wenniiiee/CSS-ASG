@@ -1,0 +1,493 @@
+/* ---------------- Hero Banner ---------------- */
+.esports-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.esports-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.esports-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 1;
+}
+
+.esports-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.esports-title .block {
+  display: block;
+}
+
+/* ---------------- Content Background ---------------- */
+.esports-content {
+  position: relative;
+  z-index: 1;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ---------------- Intro Section ---------------- */
+.esports-intro {
+  max-width: 800px;
+  padding: 2rem;
+  margin: 6rem auto 4rem auto;
+  position: relative;
+  z-index: 5;
+  text-align: left;
+}
+
+.esports-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.esports-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #bbb;
+  text-align: left;
+}
+
+.esports-intro p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #ddd;
+  text-align: left;
+}
+
+/* ---------------- Tournament Section ---------------- */
+.tournament-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.tournament-text-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.tournament-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.tournament-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #bbb;
+}
+
+.tournament-intro {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* ---------------- Card Row ---------------- */
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  margin-bottom: 2rem;
+}
+
+/* ---------------- Tournament Card ---------------- */
+.tournament-card {
+  width: 190px;
+  height: 254px;
+  background: transparent;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  flex-shrink: 0;
+}
+
+.tournament-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 1;
+}
+
+.tournament-card:hover .card-content {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background: #212121;
+}
+
+/* Using clip-path for corner borders */
+.card-front::before,
+.card-back::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: 
+    linear-gradient(90deg, #005f73 25px, transparent 25px) top left,
+    linear-gradient(180deg, #005f73 25px, transparent 25px) top left,
+    linear-gradient(90deg, #005f73 25px, transparent 25px) top right,
+    linear-gradient(180deg, #005f73 25px, transparent 25px) top right,
+    linear-gradient(90deg, #005f73 25px, transparent 25px) bottom left,
+    linear-gradient(0deg, #005f73 25px, transparent 25px) bottom left,
+    linear-gradient(90deg, #005f73 25px, transparent 25px) bottom right,
+    linear-gradient(0deg, #005f73 25px, transparent 25px) bottom right;
+  background-size: 25px 2px, 2px 25px;
+  background-repeat: no-repeat;
+  background-position:
+    top left,
+    top left,
+    top right,
+    top right,
+    bottom left,
+    bottom left,
+    bottom right,
+    bottom right;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-front > *,
+.card-back > * {
+  position: relative;
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.tournament-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.tournament-game {
+  font-size: 0.95rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.prize-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prize-amount {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #006d85;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 20px rgba(0, 109, 133, 0.6);
+}
+
+.winner-text {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-top: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------- Enhanced Hover Info ---------------- */
+.hover-info {
+  position: relative;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  min-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.info-glow-line {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #006d85 20%, 
+    #006d85 50%, 
+    #006d85 80%, 
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(0, 109, 133, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.hover-info p {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ---------------- Teams & Players Section ---------------- */
+.teams-section {
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+/* Top text block matches intro/tournament width */
+.teams-text {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: left;
+}
+
+.teams-section .esports-section-title {
+  font-size: 3rem;
+}
+
+.teams-section .esports-subtitle {
+  font-size: 1.3rem;
+}
+
+.teams-intro {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: left;
+}
+
+/* ---------------- Player Carousel Gallery ---------------- */
+.players-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  margin: 4rem 0;
+}
+
+.carousel-wrapper {
+  width: 350px;
+  height: 320px;
+  position: relative;
+  perspective: 1200px;
+  flex-shrink: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(-10deg);
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  pointer-events: none;
+}
+
+.carousel-card {
+  position: absolute;
+  width: 180px;
+  height: 250px;
+  left: 50%;
+  top: 50%;
+  margin-left: -90px;
+  margin-top: -125px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 2px solid #333;
+  pointer-events: all;
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.carousel-card.selected {
+  transform: scale(1.2);
+  box-shadow: 
+    0 0 30px rgba(0, 109, 133, 0.7),
+    0 12px 48px rgba(0, 0, 0, 0.8);
+  border: 2px solid #006d85;
+  z-index: 999;
+}
+
+.carousel-card:not(.selected) {
+  filter: brightness(0.6) blur(1px);
+  z-index: 1;
+}
+
+.carousel-card:hover {
+  z-index: 100;
+}
+
+.carousel-card:not(.selected):hover {
+  filter: brightness(0.8) blur(0.5px);
+  transform: scale(1.05);
+}
+
+.player-card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.carousel-card.selected .player-card-image {
+  transform: scale(1.05);
+}
+
+/* ---------------- Info Panel ---------------- */
+.player-info {
+  max-width: 450px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.player-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 109, 133, 0.3);
+}
+
+.player-info h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #bbb;
+}
+
+.player-info p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* ---------------- Conclusion Section ---------------- */
+.esports-conclusion {
+  max-width: 800px;
+  margin: 6rem auto 4rem auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.conclusion-glow-line {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #006d85 20%, 
+    #006d85 50%, 
+    #006d85 80%, 
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(0, 109, 133, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.conclusion-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #ccc;
+  margin: 0;
+}

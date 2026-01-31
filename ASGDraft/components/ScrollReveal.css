@@ -1,0 +1,30 @@
+/* General container */
+.scroll-reveal {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Reveal text styling */
+.scroll-reveal-text,
+.games-scroll-text {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.2;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+/* Word animation baseline */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Section wrapper for games */
+.games-scroll-section {
+  margin: 8rem auto;
+  padding: 0 2rem;
+}

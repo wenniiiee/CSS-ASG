@@ -1,0 +1,178 @@
+/* Hero stays transparent */
+.history-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 1;
+}
+
+/* Hero Title */
+.history-hero-title {
+  font-family: 'Orbitron', sans-serif;   /* same as homepage big titles */
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.history-hero-title .block {
+  display: block;
+}
+
+/* Everything after hero gets grey background */
+.history-content {
+  position: relative;
+  z-index: 1;
+  background-color: #1a1a1a;  /* solid grey */
+  color: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Inner sections just handle spacing */
+.history-intro {
+  max-width: 800px;
+  padding: 2rem;
+  margin: 6rem auto 4rem auto;
+  position: relative;
+  z-index: 5;
+}
+
+.history-timeline {
+  max-width: 800px;
+  padding: 0 2rem;
+  margin: 4rem auto;
+}
+
+/* Timeline typography hierarchy */
+.history-timeline h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.history-timeline .timeline-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ccc;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.history-timeline p,
+.history-intro p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #ddd;
+  text-align: justify;
+}
+
+/* Timeline section */
+.timeline-section {
+  position: relative;
+  height: 200vh; /* taller than viewport so text can scroll */
+}
+
+.timeline-background {
+  position: sticky;
+  top: 0;
+  height: 100vh;              /* fills viewport height */
+  width: 100%;                /* fills viewport width */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* blurred base image */
+.timeline-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;   /* section’s background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+/* overlay timeline.png on top of the section background */
+.timeline-section .timeline-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/timeline.png');
+  background-size: cover;       /* fills viewport */
+  background-position: center;  /* keep centered baseline */
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: 1;
+
+  /* shift image horizontally */
+  transform: translateX(300px); /* 👈 move right by 100px */
+}
+
+
+
+
+/* Center textbox in viewport initially */
+.timeline-textbox {
+  position: sticky;            /* stays pinned while scrolling */
+  top: 50%;                    /* anchor point */
+  transform: translateY(-50%); /* adjust vertical reveal timing */
+  max-width: 40%;              /* fits neatly in half the viewport */
+  margin-left: 5%;             /* pushes it inward from left edge */
+  margin-right: auto;          /* ensures it stays in left half */
+  padding: 2rem;
+  background: rgba(0,0,0,0.7);
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  z-index: 2;                  /* above gradient */
+}
+
+.timeline-textbox.left {
+  margin-left: 5rem;
+}
+
+.timeline-textbox h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.timeline-textbox ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+

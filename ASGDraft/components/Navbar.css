@@ -1,0 +1,94 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  padding: 1rem 2rem;
+  background: transparent; /* no hard borders */
+  position: fixed; /* stays at top */
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo styling */
+.logo {
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif; /* same as hero banner */
+  font-size: 2rem; /* ✨ adjust size here */
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* ✨ adjust spacing between buttons */
+  margin-right: 3rem;
+}
+
+/* Reset default link styles */
+.nav-links a {
+  text-decoration: none;   /* removes underline */
+  font-family: inherit;    /* keeps same font as parent */
+  color: inherit;          /* uses .btn color */
+}
+
+/* Button styling from Uiverse */
+.btn {
+  font-size: 1rem; /* ✨ change this for link text size */
+  background: transparent;
+  border: none;
+  padding: 0.5em 1em; /* ✨ adjust padding for button size */
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+/* Hover underline effect */
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* ✨ adjust thickness of underline */
+  width: 0;
+  background-color: #ffc506;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}

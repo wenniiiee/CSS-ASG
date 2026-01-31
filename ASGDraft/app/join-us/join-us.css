@@ -1,0 +1,537 @@
+/* ---------------- Hero Banner ---------------- */
+.join-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.join-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.join-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 1;
+}
+
+.join-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: inherit;
+  text-shadow: none;
+}
+
+.join-title .block {
+  display: block;
+}
+
+/* ---------------- Content Background ---------------- */
+.join-content {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  color: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem 2rem;
+}
+
+/* ---------------- Header Section ---------------- */
+.join-us-header {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00f0ff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #ddd;
+  text-align: center;
+}
+
+/* ---------------- What You'll Do Section ---------------- */
+.what-you-do {
+  max-width: 1000px;
+  margin: 0 auto 5rem auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.responsibility-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 240, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.responsibility-item:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+.responsibility-item .icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.responsibility-item h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00f0ff;
+  margin-bottom: 0.5rem;
+}
+
+.responsibility-item p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+/* ---------------- Application Section ---------------- */
+.application-section {
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-instructions {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(0, 240, 255, 0.05);
+  border-left: 4px solid #00f0ff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* ---------------- Form Styling ---------------- */
+.application-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #666;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #00f0ff;
+  background: rgba(0, 240, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* ---------------- Checkbox Group ---------------- */
+.checkbox-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.checkbox-input {
+  margin-top: 0.2rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #00f0ff;
+}
+
+/* ---------------- Form Actions ---------------- */
+.form-actions {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.submit-button {
+  padding: 1.2rem 3.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  background: linear-gradient(90deg, #00f0ff, #ff00c8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5), 0 0 50px rgba(255, 0, 200, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* ---------------- Contact Section ---------------- */
+.contact-section {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.8;
+}
+
+.contact-section a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #ff00c8;
+  text-decoration: underline;
+}
+
+/* ========================================
+   CONFIRMATION PAGE
+======================================== */
+
+.join-us-main {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 80px 2rem 60px 2rem;
+}
+
+.join-us-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.confirmation-section {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+  text-align: center;
+}
+
+.confirmation-icon {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  animation: iconFadeIn 0.6s ease-out;
+}
+
+@keyframes iconFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.confirmation-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00f0ff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.confirmation-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+.confirmation-details {
+  background: rgba(0, 240, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #00f0ff;
+}
+
+.detail-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.8rem 0;
+  text-align: left;
+}
+
+.detail-item strong {
+  color: #00f0ff;
+  font-weight: 600;
+}
+
+.next-steps {
+  background: rgba(255, 0, 200, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #ff00c8;
+  text-align: left;
+}
+
+.next-steps h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff00c8;
+  margin-bottom: 1rem;
+}
+
+.next-steps ol {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ccc;
+  padding-left: 1.5rem;
+}
+
+.next-steps li {
+  margin: 0.8rem 0;
+}
+
+.next-steps strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.confirmation-note {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #bbb;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.confirmation-note a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.confirmation-note a:hover {
+  color: #ff00c8;
+  text-decoration: underline;
+}
+
+.back-home-button {
+  padding: 1rem 2.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  background: linear-gradient(90deg, #00f0ff, #ff00c8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-home-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .join-title {
+    font-size: 3.5rem;
+  }
+
+  .join-overlay {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .join-content {
+    padding: 4rem 1.5rem 3rem 1.5rem;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .responsibilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .what-you-do,
+  .application-section,
+  .confirmation-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .confirmation-title {
+    font-size: 2rem;
+  }
+
+  .submit-button,
+  .back-home-button {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .join-title {
+    font-size: 2.5rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .responsibility-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .responsibility-item p {
+    font-size: 0.9rem;
+  }
+
+  .confirmation-title {
+    font-size: 1.6rem;
+  }
+
+  .confirmation-message {
+    font-size: 1rem;
+  }
+
+  .what-you-do,
+  .application-section {
+    padding: 1.5rem 1rem;
+  }
+}

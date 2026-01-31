@@ -1,0 +1,491 @@
+.games-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.games-video {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.games-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 1;
+}
+
+/* Hero Title */
+.games-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.games-title .block {
+  display: block;
+}
+
+/* Content background */
+.games-content {
+  position: relative;
+  z-index: 1;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Intro Section */
+.games-intro {
+  max-width: 800px;
+  padding: 2rem;
+  margin: 6rem auto 4rem auto;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.games-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.games-intro p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #ddd;
+  text-align: justify;
+}
+
+/* Scroll Reveal Section - Updated */
+.games-scroll-section {
+  text-align: center;
+  margin: 8rem 0;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.games-scroll-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* Tier List Section */
+.games-card-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.tierlist-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.tierlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #252525;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 850px;
+  align-self: flex-start;
+}
+
+.tier-row {
+  display: flex;
+  border-bottom: 2px solid #1a1a1a;
+  min-height: 150px;
+  position: relative;
+}
+
+.tier-row:last-child {
+  border-bottom: none;
+}
+
+.tier-label {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  border-right: 2px solid #1a1a1a;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.tier-drop-zone {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.tier-drop-zone.drag-over {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tier Colors */
+.tier-row.s-tier .tier-label { background: #ff4444; }
+.tier-row.a-tier .tier-label { background: #ff8844; }
+.tier-row.b-tier .tier-label { background: #ffdd44; }
+.tier-row.c-tier .tier-label { background: #88ff44; }
+.tier-row.d-tier .tier-label { background: #44ff88; }
+
+.tier-row.s-tier .tier-drop-zone { background: rgba(255, 68, 68, 0.15); }
+.tier-row.a-tier .tier-drop-zone { background: rgba(255, 136, 68, 0.15); }
+.tier-row.b-tier .tier-drop-zone { background: rgba(255, 221, 68, 0.15); }
+.tier-row.c-tier .tier-drop-zone { background: rgba(136, 255, 68, 0.15); }
+.tier-row.d-tier .tier-drop-zone { background: rgba(68, 255, 136, 0.15); }
+
+/* Unranked Zone */
+.unranked-zone {
+  width: 380px;
+  padding: 20px;
+  background: rgba(42, 42, 42, 0.6);
+  border-radius: 12px;
+  border: 2px dashed #555;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.unranked-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.unranked-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  align-content: start;
+}
+
+/* Base card style */
+.card {
+  position: relative;
+  box-sizing: border-box;
+  width: 85px;
+  height: 113px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 2px solid #fff;
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  text-align: center;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  pointer-events: none;
+  user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card.dragging {
+  cursor: grabbing;
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 8px 12px 24px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+/* Poll Section - Updated */
+.poll-section {
+  margin: 6rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+  color: #fff;
+  border-radius: 16px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 
+    0 0 40px rgba(100, 150, 255, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+.poll-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+}
+
+.poll-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.poll-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.vote-button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.vote-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.6);
+}
+
+.vote-button:active {
+  transform: scale(0.98);
+}
+
+.vote-button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.vote-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Dropdown */
+.select {
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.selected {
+  background-color: #2a2f3b;
+  padding: 12px 18px;
+  margin-bottom: 3px;
+  border-radius: 8px;
+  font-size: 15px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+.arrow {
+  height: 10px;
+  width: 25px;
+  fill: white;
+  transition: 300ms;
+}
+
+.arrow.open { 
+  transform: rotate(180deg); 
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #2a2f3b;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  min-width: 300px;
+  z-index: 1000;
+  border: 1px solid rgba(100, 150, 255, 0.3);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.option {
+  border-radius: 6px;
+  padding: 10px 14px;
+  transition: 300ms;
+  background-color: transparent;
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.option:hover { 
+  background-color: #323741; 
+}
+
+/* Poll Results - Updated Layout */
+.poll-results {
+  margin-top: 3rem;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 1s ease forwards;
+}
+
+.poll-results-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.poll-result-item {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  text-align: left;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-container {
+  flex: 1;
+  position: relative;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 6px;
+  width: 0%;
+  transition: width 1.5s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.bar-stats {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+/* Top 3 colors with gradients */
+.bar.first { 
+  background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+.bar.second { 
+  background: linear-gradient(90deg, #c0c0c0, #e8e8e8);
+}
+.bar.third { 
+  background: linear-gradient(90deg, #cd7f32, #e69a5a);
+}
+.bar.other {
+  background: linear-gradient(90deg, #4a5568, #6b7280);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tier descriptions */
+.tier-description {
+  position: absolute;
+  left: 130px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
